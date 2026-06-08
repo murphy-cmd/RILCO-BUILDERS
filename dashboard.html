@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Dashboard</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<div class="dashboard">
-    <h1>Welcome to RILCO Dashboard</h1>
+<div class="sidebar">
+    <h2>RILCO Admin</h2>
 
-    <button onclick="logout()">Logout</button>
+    <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="users.html">Users</a></li>
+    </ul>
 </div>
 
-<script type="module" src="dashboard.js"></script>
+<div class="main">
+
+    <div class="topbar">
+        <h1>Dashboard</h1>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Projects</h3>
+            <span id="projectsCount">0</span>
+        </div>
+
+        <div class="card">
+            <h3>Clients</h3>
+            <span id="clientsCount">0</span>
+        </div>
+
+        <div class="card">
+            <h3>Employees</h3>
+            <span id="employeesCount">0</span>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
 
 </body>
 </html>
