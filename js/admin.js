@@ -1,41 +1,70 @@
-import { db } from "./firebase.js";
+import { auth, db } from "./firebase.js";
 
 import {
 collection,
 getDocs
-}
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const userTable =
-document.getElementById("userTable");
+import {
+signOut,
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+window.showSection = function(section){
+
+document.getElementById("dashboard").style.display="none";
+document.getElementById("users").style.display="none";
+
+document.getElementById(section).style.display="block";
+
+}
+
+window.logout = async function(){
+
+await signOut(auth);
+
+window.location.href="login.html";
+
+}
 
 async function loadUsers(){
 
-userTable.innerHTML="";
-
-const querySnapshot =
+const snapshot =
 await getDocs(collection(db,"users"));
 
-let count = 0;
+document.getElementById("userCount").textContent =
+snapshot.size;
 
-querySnapshot.forEach((doc)=>{
+let html="";
 
-count++;
+snapshot.forEach((doc)=>{
 
-const user = doc.data();
+const user=doc.data();
 
-userTable.innerHTML += `
+html += `
 <tr>
-<td>${user.fullname || "-"}</td>
-<td>${user.email || "-"}</td>
-<td>${user.role || "user"}</td>
+<td>${user.name || "No Name"}</td>
+<td>${user.email}</td>
 </tr>
 `;
 
 });
 
-document.getElementById("userCount").innerText = count;
+document.getElementById("userTable").innerHTML =
+html;
+
+}
+
+onAuthStateChanged(auth,(user)=>{
+
+if(!user){
+
+window.location.href="login.html";
+
+return;
 
 }
 
 loadUsers();
+
+});
