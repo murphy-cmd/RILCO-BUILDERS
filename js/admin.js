@@ -3,12 +3,15 @@ import { db } from "./firebase.js";
 import {
 collection,
 getDocs
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+}
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const userTable =
 document.getElementById("userTable");
 
 async function loadUsers(){
+
+userTable.innerHTML="";
 
 const querySnapshot =
 await getDocs(collection(db,"users"));
@@ -23,9 +26,9 @@ const user = doc.data();
 
 userTable.innerHTML += `
 <tr>
-<td>${user.fullname}</td>
-<td>${user.email}</td>
-<td>${user.role}</td>
+<td>${user.fullname || "-"}</td>
+<td>${user.email || "-"}</td>
+<td>${user.role || "user"}</td>
 </tr>
 `;
 
