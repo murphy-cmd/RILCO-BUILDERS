@@ -7,31 +7,42 @@ signOut
 
 import {
 doc,
-getDoc
+getDoc,
+collection,
+getDocs
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 onAuthStateChanged(auth, async(user)=>{
 
-if(user){
+if(!user){
+window.location.href="login.html";
+return;
+}
 
-const docRef =
-doc(db,"users",user.uid);
+const userRef = doc(db,"users",user.uid);
+const userSnap = await getDoc(userRef);
 
-const docSnap =
-await getDoc(docRef);
-
-if(docSnap.exists()){
+if(userSnap.exists()){
 
 document.getElementById("welcome").innerHTML =
-`Welcome, ${docSnap.data().fullname}`;
+`Welcome, ${userSnap.data().fullname}`;
 
 }
 
-}else{
+// PROJECTS COUNT
+const projects = await getDocs(collection(db,"projects"));
+document.getElementById("projectCount").innerHTML =
+projects.size;
 
-window.location.href="login.html";
+// SERVICES COUNT
+const services = await getDocs(collection(db,"services"));
+document.getElementById("serviceCount").innerHTML =
+services.size;
 
-}
+// MESSAGES COUNT
+const messages = await getDocs(collection(db,"messages"));
+document.getElementById("messageCount").innerHTML =
+messages.size;
 
 });
 
@@ -41,4 +52,4 @@ await signOut(auth);
 
 window.location.href="login.html";
 
-};
+}
