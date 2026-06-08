@@ -1,87 +1,85 @@
-import {doc, setDoc, getDoc} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
 import { auth, db } from "./firebase.js";
 
 import {
-createUserWithEmailAndPassword,
-signInWithEmailAndPassword
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 import {
-doc,
-setDoc
+  doc,
+  setDoc
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-window.register = async function(){
+// REGISTER
+window.register = async function () {
 
-const fullname =
-document.getElementById("fullname").value;
+  const fullname =
+    document.getElementById("fullname").value;
 
-const email =
-document.getElementById("email").value;
+  const email =
+    document.getElementById("email").value;
 
-const password =
-document.getElementById("password").value;
+  const password =
+    document.getElementById("password").value;
 
-try{
+  try {
 
-const userCredential =
-await createUserWithEmailAndPassword(
-auth,
-email,
-password
-);
+    const userCredential =
+      await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
 
-const user = userCredential.user;
+    const user = userCredential.user;
 
-await setDoc(
-doc(db,"users",user.uid),
-{
-fullname,
-email,
-role:"user",
-createdAt:new Date()
-}
-);
+    await setDoc(
+      doc(db, "users", user.uid),
+      {
+        fullname,
+        email,
+        role: "user",
+        createdAt: new Date()
+      }
+    );
 
-alert("Registration Successful!");
+    alert("Registration Successful!");
+    window.location.href = "login.html";
 
-window.location.href="login.html";
+  } catch (error) {
 
-}
-catch(error){
+    alert(error.message);
+    console.error(error);
 
-alert(error.message);
-
-}
+  }
 
 };
 
-window.login = async function(){
+// LOGIN
+window.login = async function () {
 
-const email =
-document.getElementById("email").value;
+  const email =
+    document.getElementById("email").value;
 
-const password =
-document.getElementById("password").value;
+  const password =
+    document.getElementById("password").value;
 
-try{
+  try {
 
-await signInWithEmailAndPassword(
-auth,
-email,
-password
-);
+    await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
 
-alert("Login Successful!");
+    alert("Login Successful!");
+    window.location.href = "dashboard.html";
 
-window.location.href="dashboard.html";
+  } catch (error) {
 
-}
-catch(error){
+    alert(error.message);
+    console.error(error);
 
-alert(error.message);
-
-}
+  }
 
 };
