@@ -2,61 +2,121 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-display:flex;
 background:#f5f7fa;
 }
 
-.sidebar{
-width:250px;
-height:100vh;
-background:#0a1f3a;
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:#0A4DA2;
 color:white;
-padding:20px;
-position:fixed;
 }
 
-.sidebar h2{
-margin-bottom:30px;
-}
-
-.sidebar ul{
+.nav-links{
+display:flex;
 list-style:none;
+gap:20px;
 }
 
-.sidebar ul li{
-margin:15px 0;
-}
-
-.sidebar a{
+.nav-links a{
 color:white;
 text-decoration:none;
 }
 
-.main{
-margin-left:250px;
-width:100%;
-padding:30px;
+.btn-login{
+background:white;
+color:#0A4DA2 !important;
+padding:10px 20px;
+border-radius:5px;
 }
 
-.cards{
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('../assets/hero.jpg');
+background-size:cover;
+color:white;
+text-align:center;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.btn-primary{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#0A4DA2;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+.about,
+.services,
+.projects,
+.contact{
+padding:80px 10%;
+}
+
+.service-grid,
+.project-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 margin-top:30px;
 }
 
-.card{
+.card,
+.project-card{
 background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
+padding:30px;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,.1);
+text-align:center;
 }
 
-.card span{
-font-size:35px;
-font-weight:bold;
+.card i{
+font-size:40px;
+color:#0A4DA2;
+margin-bottom:10px;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:15px;
+max-width:500px;
+}
+
+input,
+textarea{
+padding:15px;
+border:1px solid #ddd;
+border-radius:5px;
+}
+
+button{
+padding:15px;
+background:#0A4DA2;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+footer{
+background:#0A4DA2;
+color:white;
+text-align:center;
+padding:20px;
 }
