@@ -1,14 +1,10 @@
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
 
-anchor.addEventListener('click', function(e){
+// DARK MODE
+const btn = document.getElementById("darkModeBtn");
 
-e.preventDefault();
-
-document.querySelector(this.getAttribute('href'))
-.scrollIntoView({
-behavior:'smooth'
-});
-
-});
-
+btn.addEventListener("click", () => {
+document.body.classList.toggle("dark-mode");
 });
