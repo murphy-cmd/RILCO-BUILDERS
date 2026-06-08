@@ -1,168 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>RILCO Builders</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RILCO BUILDERS</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
 <nav class="navbar">
-    <div class="logo">RILCO</div>
+    <div class="logo">
+        <h2>RILCO BUILDERS</h2>
+    </div>
 
-    <ul class="nav-links" id="navLinks">
+    <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#team">Team</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="login.html" class="btn-login">Login</a></li>
     </ul>
-
-    <div class="menu" onclick="toggleMenu()">☰</div>
-
-    <button id="darkModeBtn">🌙</button>
 </nav>
-</header>
 
-<!-- HERO -->
 <section class="hero" id="home">
     <div class="hero-content">
-        <h1>We Build Your Future</h1>
-        <p>High-quality construction with modern engineering and design excellence.</p>
-        <a href="#contact" class="btn">Get Started</a>
+        <h1>Building Excellence With Integrity</h1>
+        <p>Professional Construction, Engineering and Contracting Services</p>
+        <a href="login.html" class="btn-primary">Get Started</a>
     </div>
 </section>
 
-<!-- ABOUT -->
-<section class="section" id="about">
+<section class="about" id="about">
     <h2>About Us</h2>
-    <div class="grid">
-        <div class="box">
-            <h3>Mission</h3>
-            <p>To deliver safe, durable and innovative construction solutions.</p>
-        </div>
-        <div class="box">
-            <h3>Vision</h3>
-            <p>To become a leading construction company in the Philippines.</p>
-        </div>
-        <div class="box">
-            <h3>Values</h3>
-            <p>Integrity, Quality, Safety, Innovation.</p>
-        </div>
-    </div>
+    <p>
+        RILCO BUILDERS is committed to delivering quality construction
+        projects through innovation, safety, and excellence.
+    </p>
 </section>
 
-<!-- SERVICES -->
-<section class="section dark" id="services">
-    <h2>Our Services</h2>
+<section class="services" id="services">
 
-    <div class="grid">
-        <div class="card">🏗 General Construction</div>
-        <div class="card">📐 Engineering Design</div>
-        <div class="card">🧱 Renovation</div>
-        <div class="card">📊 Project Management</div>
-    </div>
+<h2>Our Services</h2>
+
+<div class="service-grid">
+
+<div class="card">
+<i class="fas fa-building"></i>
+<h3>Construction</h3>
+<p>Residential and Commercial Construction</p>
+</div>
+
+<div class="card">
+<i class="fas fa-drafting-compass"></i>
+<h3>Engineering</h3>
+<p>Professional Engineering Solutions</p>
+</div>
+
+<div class="card">
+<i class="fas fa-hammer"></i>
+<h3>Renovation</h3>
+<p>Building Renovation and Improvements</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- TEAM -->
-<section class="section" id="team">
-    <h2>Our Team</h2>
+<section class="projects" id="projects">
 
-    <div class="grid">
-        <div class="profile">
-            <h3>Engineer 1</h3>
-            <p>Project Engineer</p>
-        </div>
+<h2>Featured Projects</h2>
 
-        <div class="profile">
-            <h3>Engineer 2</h3>
-            <p>Structural Engineer</p>
-        </div>
+<div class="project-grid">
 
-        <div class="profile">
-            <h3>Architect</h3>
-            <p>Design Specialist</p>
-        </div>
-    </div>
+<div class="project-card">
+<h3>Commercial Building</h3>
+<p>Modern Business Center</p>
+</div>
+
+<div class="project-card">
+<h3>Residential Complex</h3>
+<p>Luxury Housing Development</p>
+</div>
+
+<div class="project-card">
+<h3>Industrial Facility</h3>
+<p>Warehouse Construction</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- PROJECTS -->
-<section class="section dark" id="projects">
-    <h2>Projects</h2>
+<section class="contact" id="contact">
 
-    <div class="grid">
-        <div class="project">🏢 Commercial Building</div>
-        <div class="project">🏠 Residential Homes</div>
-        <div class="project">🏭 Industrial Warehouse</div>
-    </div>
-</section>
+<h2>Contact Us</h2>
 
-<!-- TESTIMONIALS -->
-<section class="section">
-    <h2>What Clients Say</h2>
+<form>
 
-    <div class="testimonial">
-        <p>"Very professional and high quality work!"</p>
-        <span>- Client A</span>
-    </div>
+<input type="text" placeholder="Full Name" required>
 
-    <div class="testimonial">
-        <p>"Delivered project on time and within budget."</p>
-        <span>- Client B</span>
-    </div>
-</section>
+<input type="email" placeholder="Email" required>
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-    <h2>Contact Us</h2>
+<textarea placeholder="Message"></textarea>
 
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
 </section>
 
 <footer>
-    <p>© 2026 RILCO Builders</p>
+<p>© 2026 RILCO BUILDERS. All Rights Reserved.</p>
 </footer>
-
-<script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Login</title>
-</head>
-<body>
-
-  <h2>Authentication</h2>
-
-  <input
-    type="email"
-    id="email"
-    placeholder="Enter Email"
-  />
-
-  <input
-    type="password"
-    id="password"
-    placeholder="Enter Password"
-  />
-
-  <button onclick="register()">Register</button>
-  <button onclick="login()">Login</button>
-
-  <script type="module" src="auth.js"></script>
 
 </body>
 </html>
