@@ -1,24 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Login</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RILCO BUILDERS - Login</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.login-container{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#f5f7fa;
+}
+
+.login-card{
+background:white;
+padding:40px;
+width:400px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.login-card h2{
+text-align:center;
+margin-bottom:20px;
+color:#0A4DA2;
+}
+
+.login-card input{
+width:100%;
+margin-bottom:15px;
+}
+
+.login-card button{
+width:100%;
+}
+
+.login-card p{
+margin-top:15px;
+text-align:center;
+}
+
+.login-card a{
+color:#0A4DA2;
+text-decoration:none;
+font-weight:600;
+}
+</style>
+
 </head>
+<body>
 
-<body class="auth-body">
+<div class="login-container">
 
-<div class="auth-box">
-    <h2>Login</h2>
+<div class="login-card">
 
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
+<h2>RILCO BUILDERS</h2>
 
-    <button onclick="login()">Login</button>
+<input
+type="email"
+id="email"
+placeholder="Email Address"
+required
+>
 
-    <p>Don't have an account? <a href="#" onclick="register()">Register</a></p>
+<input
+type="password"
+id="password"
+placeholder="Password"
+required
+>
+
+<button onclick="login()">
+Login
+</button>
+
+<p>
+Don't have an account?
+<a href="register.html">Register</a>
+</p>
+
 </div>
 
-<script type="module" src="auth.js"></script>
+</div>
+
+<script type="module" src="js/auth.js"></script>
 
 </body>
 </html>
