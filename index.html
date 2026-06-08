@@ -1,143 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>RILCO Builders</title>
 
 <link rel="stylesheet" href="style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-    <nav class="navbar">
-        <div class="logo">RILCO BUILDERS</div>
+<nav class="navbar">
+    <div class="logo">RILCO</div>
 
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
-        <a href="#contact" class="btn">Get Quote</a>
-    </nav>
+    <div class="menu" onclick="toggleMenu()">☰</div>
+
+    <button id="darkModeBtn">🌙</button>
+</nav>
 </header>
 
+<!-- HERO -->
 <section class="hero" id="home">
     <div class="hero-content">
-        <h1>Building Your Future With Excellence</h1>
-
-        <p>
-            Trusted construction company delivering
-            quality projects with innovation,
-            safety, and professionalism.
-        </p>
-
-        <a href="#contact" class="hero-btn">Start Project</a>
+        <h1>We Build Your Future</h1>
+        <p>High-quality construction with modern engineering and design excellence.</p>
+        <a href="#contact" class="btn">Get Started</a>
     </div>
 </section>
 
-<section class="about" id="about">
-    <div class="container">
-        <div class="about-text">
-            <h2>About Us</h2>
-
-            <p>
-                RILCO Builders is committed to providing
-                high-quality construction solutions for
-                residential, commercial, and industrial projects.
-            </p>
-
-            <p>
-                We combine expertise, innovation, and
-                customer satisfaction to deliver projects
-                beyond expectations.
-            </p>
+<!-- ABOUT -->
+<section class="section" id="about">
+    <h2>About Us</h2>
+    <div class="grid">
+        <div class="box">
+            <h3>Mission</h3>
+            <p>To deliver safe, durable and innovative construction solutions.</p>
+        </div>
+        <div class="box">
+            <h3>Vision</h3>
+            <p>To become a leading construction company in the Philippines.</p>
+        </div>
+        <div class="box">
+            <h3>Values</h3>
+            <p>Integrity, Quality, Safety, Innovation.</p>
         </div>
     </div>
 </section>
 
-<section class="services" id="services">
+<!-- SERVICES -->
+<section class="section dark" id="services">
     <h2>Our Services</h2>
 
-    <div class="service-grid">
-
-        <div class="card">
-            <h3>General Construction</h3>
-            <p>Complete building solutions.</p>
-        </div>
-
-        <div class="card">
-            <h3>Engineering Design</h3>
-            <p>Structural and technical planning.</p>
-        </div>
-
-        <div class="card">
-            <h3>Project Management</h3>
-            <p>Efficient project supervision.</p>
-        </div>
-
-        <div class="card">
-            <h3>Renovation</h3>
-            <p>Modernization and upgrades.</p>
-        </div>
-
+    <div class="grid">
+        <div class="card">🏗 General Construction</div>
+        <div class="card">📐 Engineering Design</div>
+        <div class="card">🧱 Renovation</div>
+        <div class="card">📊 Project Management</div>
     </div>
 </section>
 
-<section class="projects" id="projects">
+<!-- TEAM -->
+<section class="section" id="team">
+    <h2>Our Team</h2>
 
-    <h2>Recent Projects</h2>
-
-    <div class="project-grid">
-
-        <div class="project-card">
-            <h3>Commercial Building</h3>
-            <p>Office Construction</p>
+    <div class="grid">
+        <div class="profile">
+            <h3>Engineer 1</h3>
+            <p>Project Engineer</p>
         </div>
 
-        <div class="project-card">
-            <h3>Residential Complex</h3>
-            <p>Housing Development</p>
+        <div class="profile">
+            <h3>Engineer 2</h3>
+            <p>Structural Engineer</p>
         </div>
 
-        <div class="project-card">
-            <h3>Industrial Facility</h3>
-            <p>Warehouse Project</p>
+        <div class="profile">
+            <h3>Architect</h3>
+            <p>Design Specialist</p>
         </div>
-
     </div>
-
 </section>
 
-<section class="contact" id="contact">
+<!-- PROJECTS -->
+<section class="section dark" id="projects">
+    <h2>Projects</h2>
 
+    <div class="grid">
+        <div class="project">🏢 Commercial Building</div>
+        <div class="project">🏠 Residential Homes</div>
+        <div class="project">🏭 Industrial Warehouse</div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+    <h2>What Clients Say</h2>
+
+    <div class="testimonial">
+        <p>"Very professional and high quality work!"</p>
+        <span>- Client A</span>
+    </div>
+
+    <div class="testimonial">
+        <p>"Delivered project on time and within budget."</p>
+        <span>- Client B</span>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
     <h2>Contact Us</h2>
 
     <form>
-
-        <input type="text" placeholder="Full Name">
-
-        <input type="email" placeholder="Email Address">
-
-        <textarea placeholder="Message"></textarea>
-
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
         <button type="submit">Send Message</button>
-
     </form>
-
 </section>
 
 <footer>
-    <p>© 2026 RILCO Builders. All Rights Reserved.</p>
+    <p>© 2026 RILCO Builders</p>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
