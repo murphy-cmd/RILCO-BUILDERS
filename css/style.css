@@ -10,7 +10,7 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f5f5f5;
+background:red !important;
 }
 
 .navbar{
@@ -68,7 +68,7 @@ background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
 
-color:red;
+color:white;
 }
 
 .hero h1{
