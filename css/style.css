@@ -59,10 +59,10 @@ text-align:center;
 
 background-image:
 linear-gradient(
-rgba(0,0,0,0.4),
-rgba(0,0,0,0.4)
+rgba(0,0,0,.45),
+rgba(0,0,0,.45)
 ),
-url("https://murphy-cmd.github.io/RILCO-BUILDERS/assets/images/Construction.png");
+url("../assets/images/Construction.png");
 
 background-size:cover;
 background-position:center;
