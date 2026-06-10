@@ -24,12 +24,11 @@ const userSnap = await getDoc(userRef);
 
 if(userSnap.exists()){
 
-const welcome = document.getElementById("welcome");
+const welcomeElement = document.getElementById("welcome");
 
-if(welcome){
-welcome.innerHTML =
-`🏗 Welcome, ${userSnap.data().fullname}`;
-
+if(welcomeElement){
+    welcomeElement.innerHTML =
+    `🏗 Welcome, ${userSnap.data().fullname}`;
 }
 
 // PROJECTS COUNT
