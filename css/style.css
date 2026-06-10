@@ -10,7 +10,7 @@ scroll-behavior:smooth;
 }
 
 body{
-background:red !important;
+background:#f5f5f5;
 }
 
 .navbar{
@@ -51,23 +51,12 @@ border-radius:4px;
 }
 
 .hero{
-height:100vh !important;
-display:flex !important;
-justify-content:center !important;
-align-items:center !important;
-text-align:center !important;
-
-background:red !important;
-}
-rgba(0,0,0,0.4),
-rgba(0,0,0,0.4)
-),
-url("https://murphy-cmd.github.io/RILCO-BUILDERS/assets/images/Construction.png");
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:#777;
 color:white;
 }
 
