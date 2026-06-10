@@ -24,8 +24,11 @@ const userSnap = await getDoc(userRef);
 
 if(userSnap.exists()){
 
-document.getElementById("welcome").innerHTML =
-`Welcome, ${userSnap.data().fullname}`;
+const welcome = document.getElementById("welcome");
+
+if(welcome){
+welcome.innerHTML =
+`🏗 Welcome, ${userSnap.data().fullname}`;
 
 }
 
