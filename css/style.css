@@ -57,16 +57,10 @@ justify-content:center;
 align-items:center;
 text-align:center;
 
-background:
-linear-gradient(
-rgba(0,0,0,.45),
-rgba(0,0,0,.45)
-),
-url('../assets/images/Construction.png');
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+background-image:url('../assets/images/Construction.png') !important;
+background-size:cover !important;
+background-position:center !important;
+background-repeat:no-repeat !important;
 
 color:white;
 }
