@@ -55,14 +55,19 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center;
-color:white;
 background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.55)
+),
 url('../assets/images/Construction.png');
+
 background-size:cover;
 background-position:center;
-background-attachment:fixed;
+background-repeat:no-repeat;
+
+color:white;
+text-align:center;
 }
 
 .hero h1{
