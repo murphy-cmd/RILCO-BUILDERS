@@ -48,10 +48,12 @@ messages.size;
 
 });
 
-window.logout = async function(){
-
-await signOut(auth);
-
-window.location.href="login.html";
-
-}
+window.logout = async () => {
+  try {
+    await signOut(auth);
+    window.location.href = "login.html";
+  } catch (error) {
+    console.error(error);
+    alert(error.message);
+  }
+};
