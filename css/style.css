@@ -57,10 +57,16 @@ justify-content:center;
 align-items:center;
 text-align:center;
 
-background-image:url('../assets/images/Construction.png') !important;
-background-size:cover !important;
-background-position:center !important;
-background-repeat:no-repeat !important;
+background-image:
+linear-gradient(
+rgba(0,0,0,0.45),
+rgba(0,0,0,0.45)
+),
+url("https://murphy-cmd.github.io/RILCO-BUILDERS/assets/images/Construction.png")
+
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
 
 color:white;
 }
