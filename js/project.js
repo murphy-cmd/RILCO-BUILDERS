@@ -26,7 +26,10 @@ project.data();
 
 projectGrid.innerHTML += `
 
-<div class="project-card">
+<div
+class="project-card"
+onclick="window.location.href='project-details.html?id=${project.id}'"
+style="cursor:pointer;">
 
 <img src="${data.image}" alt="${data.title}">
 
