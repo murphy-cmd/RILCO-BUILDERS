@@ -1,70 +1,54 @@
-import { auth, db } from "./firebase.js";
+import { db } from "./firebase.js";
 
 import {
-  onAuthStateChanged,
-  signOut
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+collection,
+getDocs
+}
+from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-import {
-  doc,
-  getDoc,
-  collection,
-  getDocs
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+async function loadDashboard(){
 
-onAuthStateChanged(auth, async (user) => {
+const snapshot =
+await getDocs(
+collection(db,"projects")
+);
 
-  if (!user) {
-    window.location.href = "login.html";
-    return;
-  }
+let totalProjects = 0;
+let ongoingProjects = 0;
+let completedProjects = 0;
+let totalBudget = 0;
 
-  try {
+snapshot.forEach((project)=>{
 
-    const userRef = doc(db, "users", user.uid);
-    const userSnap = await getDoc(userRef);
+const data = project.data();
 
-    const welcome = document.getElementById("welcome");
+totalProjects++;
 
-    if (welcome && userSnap.exists()) {
-      welcome.innerHTML =
-        `🏗 Welcome, ${userSnap.data().fullname}`;
-    }
+totalBudget += Number(data.budget || 0);
 
-    const projects = await getDocs(collection(db, "projects"));
-    document.getElementById("projectCount").innerHTML =
-      projects.size;
+if(data.status === "Ongoing"){
+ongoingProjects++;
+}
 
-    const services = await getDocs(collection(db, "services"));
-    document.getElementById("serviceCount").innerHTML =
-      services.size;
-
-    const messages = await getDocs(collection(db, "messages"));
-    document.getElementById("messageCount").innerHTML =
-      messages.size;
-
-  } catch (error) {
-    console.error(error);
-  }
+if(data.status === "Completed"){
+completedProjects++;
+}
 
 });
 
-window.logout = async function () {
+document.getElementById("totalProjects").innerText =
+totalProjects;
 
-  try {
+document.getElementById("ongoingProjects").innerText =
+ongoingProjects;
 
-    await signOut(auth);
+document.getElementById("completedProjects").innerText =
+completedProjects;
 
-    alert("Logged out successfully");
+document.getElementById("totalBudget").innerText =
+"₱" + totalBudget.toLocaleString();
 
-    window.location.href = "login.html";
+}
 
-  } catch (error) {
-
-    console.error(error);
-
-    alert(error.message);
-
-  }
-
-};
+loadDashboard();
