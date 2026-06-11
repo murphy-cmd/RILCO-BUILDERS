@@ -2,52 +2,57 @@ import { db } from "./firebase.js";
 
 import {
 collection,
-addDoc
+getDocs,
+deleteDoc,
+doc
 }
-from
-"https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-window.sendMessage =
-async function(){
+const table = document.getElementById("messagesTable");
 
-const name =
-document.getElementById("name").value;
+async function loadMessages(){
 
-const email =
-document.getElementById("email").value;
+table.innerHTML = "";
 
-const subject =
-document.getElementById("subject").value;
+const snapshot = await getDocs(collection(db,"messages"));
 
-const message =
-document.getElementById("message").value;
+snapshot.forEach((messageDoc)=>{
 
-if(
-!name ||
-!email ||
-!subject ||
-!message
-){
-alert("Please fill out all fields.");
-return;
+const data = messageDoc.data();
+
+table.innerHTML += `
+<tr>
+<td>${data.name || ""}</td>
+<td>${data.email || data.Email || ""}</td>
+<td>${data.subject || ""}</td>
+<td>${data.message || ""}</td>
+<td>${data.createdAt?.seconds
+? new Date(data.createdAt.seconds * 1000).toLocaleString()
+: ""}
+</td>
+<td>
+<button onclick="deleteMessage('${messageDoc.id}')">
+Delete
+</button>
+</td>
+</tr>
+`;
+
+});
+
 }
 
-await addDoc(
-collection(db,"messages"),
-{
-name,
-email,
-subject,
-message,
-createdAt:new Date()
+window.deleteMessage = async function(id){
+
+const confirmDelete =
+confirm("Delete this message?");
+
+if(!confirmDelete) return;
+
+await deleteDoc(doc(db,"messages",id));
+
+loadMessages();
+
 }
-);
 
-alert("Message Sent Successfully!");
-
-document.getElementById("name").value="";
-document.getElementById("email").value="";
-document.getElementById("subject").value="";
-document.getElementById("message").value="";
-
-};
+loadMessages();
