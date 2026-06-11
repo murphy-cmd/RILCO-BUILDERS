@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Contact Admin</title>
+
+<style>
+
+body{
+font-family:Poppins,sans-serif;
+background:#f5f5f5;
+padding:40px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+input,
+textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+}
+
+button{
+background:#0A4DA2;
+color:white;
+border:none;
+padding:12px 20px;
+cursor:pointer;
+border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Contact Admin</h1>
+
+<input id="name" placeholder="Your Name">
+
+<input id="email" placeholder="Your Email">
+
+<input id="subject" placeholder="Subject">
+
+<textarea
+id="message"
+rows="6"
+placeholder="Write your message">
+</textarea>
+
+<button onclick="sendMessage()">
+Send Message
+</button>
+
+</div>
+
+<script type="module" src="js/messages.js"></script>
+
+</body>
+</html>
