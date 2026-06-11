@@ -67,25 +67,26 @@ margin-top:10px;
 
 <div class="form-card">
 
-<input id="title" placeholder="Project Title">
+<input id="projectName" placeholder="Project Name">
 
-<textarea id="description"
-placeholder="Project Description">
-</textarea>
+<input id="clientName" placeholder="Client Name">
 
-<input id="image"
-placeholder="Image URL">
+<input id="location" placeholder="Location">
+
+<input id="budget" type="number" placeholder="Budget">
+
+<textarea id="description" placeholder="Project Description"></textarea>
+
+<input id="image" placeholder="Image URL">
 
 <select id="status">
-<option>Ongoing</option>
-<option>Completed</option>
+    <option>Planning</option>
+    <option>Ongoing</option>
+    <option>Completed</option>
 </select>
 
-<input
-id="progress"
-type="number"
-placeholder="Progress %">
-
+<input id="progress" type="number" placeholder="Progress %">
+  
 <button onclick="addProject()">
 Add Project
 </button>
