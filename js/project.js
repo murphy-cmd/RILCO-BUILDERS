@@ -3,46 +3,64 @@ import { db } from "./firebase.js";
 import {
 collection,
 getDocs
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+}
+from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const container = document.getElementById("projects");
+const projectGrid =
+document.getElementById("projectGrid");
 
 async function loadProjects(){
 
-    const snapshot = await getDocs(
-        collection(db,"projects")
-    );
+const snapshot =
+await getDocs(
+collection(db,"projects")
+);
 
-    container.innerHTML = "";
+projectGrid.innerHTML = "";
 
-    snapshot.forEach((project)=>{
+snapshot.forEach((project)=>{
 
-        const data = project.data();
+const data =
+project.data();
 
-        container.innerHTML += `
-        <div class="card">
+projectGrid.innerHTML += `
 
-            <img src="${data.image}" alt="${data.title}">
+<div class="project-card">
 
-            <div class="card-content">
+<img src="${data.image}" alt="${data.title}">
 
-                <h2>${data.title}</h2>
+<div class="content">
 
-                <p>${data.description}</p>
+<h2>${data.title}</h2>
 
-                <p><strong>Client:</strong> ${data.client}</p>
+<p>${data.description}</p>
 
-                <p><strong>Budget:</strong> ₱${Number(data.budget).toLocaleString()}</p>
+<p><strong>Client:</strong> ${data.client}</p>
 
-                <p><strong>Status:</strong> ${data.status}</p>
+<p><strong>Budget:</strong>
+₱${Number(data.budget).toLocaleString()}</p>
 
-                <p><strong>Progress:</strong> ${data.progress}%</p>
+<p class="status">
+Status: ${data.status}
+</p>
 
-            </div>
+<div class="progress-bar">
+<div
+class="progress"
+style="width:${data.progress}%;">
+</div>
+</div>
 
-        </div>
-        `;
-    });
+<p>${data.progress}% Complete</p>
+
+</div>
+
+</div>
+
+`;
+
+});
 
 }
 
