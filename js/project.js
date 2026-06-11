@@ -5,52 +5,44 @@ collection,
 getDocs
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const projectGrid =
-document.getElementById("projectGrid");
+const container = document.getElementById("projects");
 
 async function loadProjects(){
 
-const querySnapshot =
-await getDocs(collection(db,"projects"));
+    const snapshot = await getDocs(
+        collection(db,"projects")
+    );
 
-projectGrid.innerHTML = "";
+    container.innerHTML = "";
 
-querySnapshot.forEach((doc)=>{
+    snapshot.forEach((project)=>{
 
-const project = doc.data();
+        const data = project.data();
 
-projectGrid.innerHTML += `
+        container.innerHTML += `
+        <div class="card">
 
-<div class="project-card">
+            <img src="${data.image}" alt="${data.title}">
 
-<img src="${project.image}">
+            <div class="card-content">
 
-<div class="content">
+                <h2>${data.title}</h2>
 
-<h2>${project.title}</h2>
+                <p>${data.description}</p>
 
-<p>${project.description}</p>
+                <p><strong>Client:</strong> ${data.client}</p>
 
-<div class="status">
-${project.status}
-</div>
+                <p><strong>Budget:</strong> ₱${Number(data.budget).toLocaleString()}</p>
 
-<div class="progress-bar">
-<div
-class="progress"
-style="width:${project.progress}%">
-</div>
-</div>
+                <p><strong>Status:</strong> ${data.status}</p>
 
-<p>${project.progress}% Complete</p>
+                <p><strong>Progress:</strong> ${data.progress}%</p>
 
-</div>
+            </div>
 
-</div>
-
-`;
-
-});
+        </div>
+        `;
+    });
 
 }
 
