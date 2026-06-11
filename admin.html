@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
 
 <title>RILCO Admin Dashboard</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,7 +16,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
@@ -26,7 +27,7 @@ background:#f4f7fc;
 position:fixed;
 left:0;
 top:0;
-width:250px;
+width:260px;
 height:100%;
 background:#0A4DA2;
 color:white;
@@ -35,6 +36,7 @@ padding:20px;
 
 .sidebar h2{
 margin-bottom:30px;
+text-align:center;
 }
 
 .sidebar ul{
@@ -46,6 +48,7 @@ padding:15px;
 cursor:pointer;
 border-radius:8px;
 margin-bottom:10px;
+transition:.3s;
 }
 
 .sidebar ul li:hover{
@@ -53,8 +56,20 @@ background:rgba(255,255,255,.2);
 }
 
 .main{
-margin-left:250px;
+margin-left:260px;
 padding:30px;
+}
+
+.header{
+background:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:30px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.header h1{
+color:#0A4DA2;
 }
 
 .cards{
@@ -67,16 +82,23 @@ margin-bottom:30px;
 .card{
 background:white;
 padding:25px;
-border-radius:12px;
-box-shadow:0 2px 10px rgba(0,0,0,.1);
+border-radius:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+cursor:pointer;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .card h3{
 color:#555;
+margin-bottom:10px;
 }
 
 .card p{
-font-size:30px;
+font-size:28px;
 font-weight:bold;
 color:#0A4DA2;
 }
@@ -84,8 +106,8 @@ color:#0A4DA2;
 .table-box{
 background:white;
 padding:20px;
-border-radius:12px;
-box-shadow:0 2px 10px rgba(0,0,0,.1);
+border-radius:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
 table{
@@ -123,40 +145,68 @@ background:#083c80;
 <h2>RILCO ADMIN</h2>
 
 <ul>
-<li onclick="showSection('dashboard')">Dashboard</li>
-<li onclick="showSection('projects')">Projects</li>
-<li onclick="showSection('services')">Services</li>
-<li onclick="showSection('users')">Users</li>
-<li onclick="showSection('messages')">Messages</li>
-<li onclick="logout()">Logout</li>
+
+<li onclick="location.href='admin.html'">
+📊 Dashboard
+</li>
+
+<li onclick="location.href='admin-projects.html'">
+📁 Project Management
+</li>
+
+<li onclick="showSection('users')">
+👥 Users
+</li>
+
+<li onclick="showSection('messages')">
+💬 Messages
+</li>
+
+<li onclick="logout()">
+🚪 Logout
+</li>
+
 </ul>
 
 </div>
 
 <div class="main">
 
+<div class="header">
+<h1>Construction Management Dashboard</h1>
+<p>Manage Projects, Users and Company Data</p>
+</div>
+
 <div id="dashboard">
 
 <div class="cards">
 
 <div class="card">
-<h3>Users</h3>
+<h3>Total Users</h3>
 <p id="userCount">0</p>
 </div>
 
 <div class="card">
-<h3>Projects</h3>
+<h3>Total Projects</h3>
 <p id="projectCount">0</p>
 </div>
 
 <div class="card">
-<h3>Services</h3>
+<h3>Total Services</h3>
 <p id="serviceCount">0</p>
 </div>
 
 <div class="card">
-<h3>Messages</h3>
+<h3>Total Messages</h3>
 <p id="messageCount">0</p>
+</div>
+
+<div class="card"
+onclick="location.href='admin-projects.html'">
+
+<h3>📁 Project Management</h3>
+<p>Open</p>
+
 </div>
 
 </div>
@@ -169,16 +219,22 @@ background:#083c80;
 
 <h2>Registered Users</h2>
 
+<br>
+
 <table>
 
 <thead>
+
 <tr>
 <th>Name</th>
 <th>Email</th>
 </tr>
+
 </thead>
 
-<tbody id="userTable"></tbody>
+<tbody id="userTable">
+
+</tbody>
 
 </table>
 
@@ -192,3 +248,4 @@ background:#083c80;
 
 </body>
 </html>
+```
