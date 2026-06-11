@@ -16,8 +16,17 @@ document.getElementById("projectList");
 window.addProject =
 async function(){
 
-const title =
-document.getElementById("title").value;
+const projectName =
+document.getElementById("projectName").value;
+
+const clientName =
+document.getElementById("clientName").value;
+
+const location =
+document.getElementById("location").value;
+
+const budget =
+document.getElementById("budget").value;
 
 const description =
 document.getElementById("description").value;
@@ -34,15 +43,19 @@ document.getElementById("progress").value;
 await addDoc(
 collection(db,"projects"),
 {
-title,
+projectName,
+clientName,
+location,
+budget:Number(budget),
 description,
 image,
 status,
-progress:Number(progress)
+progress:Number(progress),
+createdAt:new Date()
 }
 );
 
-alert("Project Added");
+alert("Project Added Successfully!");
 
 loadProjects();
 
@@ -66,15 +79,40 @@ projectList.innerHTML += `
 
 <div class="project-item">
 
-<h3>${data.title}</h3>
+<img
+src="${data.image}"
+style="
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:10px;
+">
+
+<h3>${data.projectName}</h3>
+
+<p><strong>Client:</strong>
+${data.clientName}</p>
+
+<p><strong>Location:</strong>
+${data.location}</p>
+
+<p><strong>Budget:</strong>
+₱${data.budget}</p>
 
 <p>${data.description}</p>
 
-<p>Status:
+<p><strong>Status:</strong>
 ${data.status}</p>
 
-<p>Progress:
+<p><strong>Progress:</strong>
 ${data.progress}%</p>
+
+<progress
+value="${data.progress}"
+max="100"
+style="width:100%;">
+</progress>
 
 <button
 class="delete-btn"
@@ -93,11 +131,15 @@ Delete
 window.deleteProject =
 async function(id){
 
+if(confirm("Delete this project?")){
+
 await deleteDoc(
 doc(db,"projects",id)
 );
 
 loadProjects();
+
+}
 
 };
 
