@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Admin Projects</title>
+
+<style>
+
+body{
+font-family:Poppins,sans-serif;
+padding:30px;
+background:#f5f5f5;
+}
+
+.form-card{
+background:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:30px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+}
+
+button{
+background:#0A4DA2;
+color:white;
+border:none;
+padding:12px 20px;
+cursor:pointer;
+}
+
+.project-list{
+display:grid;
+gap:20px;
+}
+
+.project-item{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.delete-btn{
+background:red;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Project Management</h1>
+
+<div class="form-card">
+
+<input id="title" placeholder="Project Title">
+
+<textarea id="description"
+placeholder="Project Description">
+</textarea>
+
+<input id="image"
+placeholder="Image URL">
+
+<select id="status">
+<option>Ongoing</option>
+<option>Completed</option>
+</select>
+
+<input
+id="progress"
+type="number"
+placeholder="Progress %">
+
+<button onclick="addProject()">
+Add Project
+</button>
+
+</div>
+
+<div id="projectList"
+class="project-list">
+</div>
+
+<script type="module"
+src="js/admin-projects.js">
+</script>
+
+</body>
+</html>
