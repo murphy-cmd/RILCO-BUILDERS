@@ -312,6 +312,17 @@ Contact Admin
 
 </div>
 
+<script>
+window.logout = function () {
+  localStorage.removeItem("rilcoAuthUser");
+  sessionStorage.clear();
+  window.location.replace("login.html");
+};
+
+window.showComingSoon = function (featureName) {
+  alert(featureName + " page is not available yet.");
+};
+</script>
 <script type="module" src="js/dashboard.js"></script>
 
 </body>
