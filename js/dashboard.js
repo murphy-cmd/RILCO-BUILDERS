@@ -22,7 +22,12 @@ function getDemoSession() {
 }
 
 function redirectToLogin() {
-  window.location.href = "login.html";
+  window.location.replace("login.html");
+}
+
+function clearLocalSession() {
+  localStorage.removeItem(SESSION_KEY);
+  sessionStorage.clear();
 }
 
 function updateWelcome(user) {
@@ -75,16 +80,12 @@ async function loadDashboard() {
   }
 }
 
-window.logout = async function () {
-  localStorage.removeItem(SESSION_KEY);
-
-  try {
-    await signOut(auth);
-  } catch (error) {
+window.logout = function () {
+  clearLocalSession();
+  signOut(auth).catch((error) => {
     console.warn("Firebase sign out skipped.", error);
-  }
-
-  window.location.href = "login.html";
+  });
+  redirectToLogin();
 };
 
 window.showComingSoon = function (featureName) {
