@@ -205,33 +205,33 @@ font-size:32px;
 <aside class="sidebar">
 
 <div class="sidebar-logo">
-<img src="assets/images/RILCO_logo_transparent.png">
+<img src="assets/images/RILCO_logo_transparent.png" alt="RILCO BUILDERS logo">
 </div>
 
 <ul>
 
 <li onclick="location.href='dashboard.html'">
-📊 Dashboard
+Dashboard
 </li>
 
 <li onclick="location.href='projects.html'">
-📁 Projects
+Projects
 </li>
 
-<li onclick="location.href='services.html'">
-🏗 Services
+<li onclick="location.href='index.html#services'">
+Services
 </li>
 
-<li onclick="location.href='profile.html'">
-👤 Profile
+<li onclick="showComingSoon('Profile')">
+Profile
 </li>
 
-<li onclick="location.href='messages.html'">
-💬 Messages
+<li onclick="location.href='message.html'">
+Messages
 </li>
 
 <li onclick="logout()">
-🚪 Logout
+Logout
 </li>
 
 </ul>
@@ -243,7 +243,7 @@ font-size:32px;
 <div class="welcome-banner">
 
 <h1 id="welcome">
-🏗 Welcome to RILCO BUILDERS
+Welcome to RILCO BUILDERS
 </h1>
 
 <p>
@@ -257,7 +257,7 @@ Safety, Quality Construction, and Professional Engineering Services.
 View Projects
 </button>
 
-<button onclick="location.href='messages.html'">
+<button onclick="location.href='message.html'">
 Contact Admin
 </button>
 
@@ -292,17 +292,17 @@ Contact Admin
 <div class="quick-actions">
 
 <div class="action-card" onclick="location.href='projects.html'">
-<h3>📁 Manage Projects</h3>
+<h3>Manage Projects</h3>
 <p>View company projects and updates.</p>
 </div>
 
-<div class="action-card" onclick="location.href='services.html'">
-<h3>🏗 Services</h3>
+<div class="action-card" onclick="location.href='index.html#services'">
+<h3>Services</h3>
 <p>Browse available construction services.</p>
 </div>
 
-<div class="action-card" onclick="location.href='profile.html'">
-<h3>👤 My Profile</h3>
+<div class="action-card" onclick="showComingSoon('Profile')">
+<h3>My Profile</h3>
 <p>Manage account settings and information.</p>
 </div>
 
@@ -311,12 +311,6 @@ Contact Admin
 </main>
 
 </div>
-
-<script>
-function testLogout(){
-    alert("Logout button works");
-}
-</script>
 
 <script type="module" src="js/dashboard.js"></script>
 
