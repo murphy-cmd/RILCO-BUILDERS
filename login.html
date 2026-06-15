@@ -15,12 +15,13 @@ display:flex;
 justify-content:center;
 align-items:center;
 background:#f5f7fa;
+padding:20px;
 }
 
 .login-card{
 background:white;
 padding:40px;
-width:400px;
+width:min(400px,100%);
 border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,.1);
 }
@@ -57,7 +58,7 @@ font-weight:600;
 
 <div class="login-container">
 
-<div class="login-card">
+<form class="login-card" onsubmit="event.preventDefault(); login();">
 
 <h2>RILCO BUILDERS</h2>
 
@@ -75,7 +76,7 @@ placeholder="Password"
 required
 >
 
-<button onclick="login()">
+<button type="submit">
 Login
 </button>
 
@@ -84,7 +85,7 @@ Don't have an account?
 <a href="register.html">Register</a>
 </p>
 
-</div>
+</form>
 
 </div>
 
