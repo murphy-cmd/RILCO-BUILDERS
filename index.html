@@ -4,125 +4,140 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RILCO BUILDERS</title>
-
 <link rel="stylesheet" href="css/style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 </head>
-
 <body>
 
-<nav class="navbar">
-    <div class="logo">
-    <img src="assets/images/RILCO_logo_transparent.png">
-</div>
+<header class="navbar">
+    <a class="logo" href="#home" aria-label="RILCO BUILDERS home">
+        <img src="assets/images/RILCO_logo_transparent.png" alt="RILCO BUILDERS logo">
+    </a>
+    <nav aria-label="Main navigation">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="login.html" class="btn-login">Login</a></li>
-    </ul>
-</nav>
+<main>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="eyebrow">Construction and engineering services</p>
+            <h1>Building Excellence With Integrity</h1>
+            <p>Reliable commercial, residential, and infrastructure solutions delivered with safety, quality, and clear communication.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">Request a Quote</a>
+                <a href="#projects" class="btn-secondary">View Projects</a>
+            </div>
+        </div>
+    </section>
 
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Building Excellence With Integrity</h1>
-        <p>Professional Construction, Engineering and Contracting Services</p>
-        <a href="login.html" class="btn-primary">Get Started</a>
-    </div>
-</section>
+    <section class="about" id="about">
+        <div class="section-copy">
+            <p class="eyebrow">About RILCO</p>
+            <h2>Trusted builders for practical, lasting projects</h2>
+            <p>
+                RILCO BUILDERS is committed to delivering quality construction projects through innovation,
+                safety, and excellence. We work with clients from planning through completion to keep every
+                build organized, durable, and aligned with the project goals.
+            </p>
+        </div>
+    </section>
 
-<section class="about" id="about">
-    <h2>About Us</h2>
-    <p>
-        RILCO BUILDERS is committed to delivering quality construction
-        projects through innovation, safety, and excellence.
-    </p>
-</section>
+    <section class="services" id="services">
+        <div class="section-heading">
+            <p class="eyebrow">Our services</p>
+            <h2>Solutions for every stage of development</h2>
+        </div>
 
-<section class="services" id="services">
+        <div class="service-grid">
+            <article class="card">
+                <img src="assets/images/Commercial.png" alt="Commercial building project">
+                <div class="card-body">
+                    <i class="fa-solid fa-building"></i>
+                    <h3>Commercial</h3>
+                    <p>Warehouses, malls, offices, and commercial buildings built for day-to-day business use.</p>
+                </div>
+            </article>
 
-<h2>Our Services</h2>
+            <article class="card">
+                <img src="assets/images/Residential.png" alt="Residential development project">
+                <div class="card-body">
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <h3>Residential</h3>
+                    <p>Housing projects and residential developments planned around comfort, quality, and value.</p>
+                </div>
+            </article>
 
-<div class="service-grid">
+            <article class="card">
+                <img src="assets/images/Infrastructure.png" alt="Infrastructure project">
+                <div class="card-body">
+                    <i class="fa-solid fa-road"></i>
+                    <h3>Infrastructure</h3>
+                    <p>Roads, bridges, and public facilities delivered with strong coordination and field discipline.</p>
+                </div>
+            </article>
+        </div>
+    </section>
 
-<div class="card">
-<img src="assets/images/Commercial.png">
-<h3>Commercial</h3>
-<p>Warehouses, malls and commercial buildings.</p>
-</div>
+    <section class="projects" id="projects">
+        <div class="section-heading">
+            <p class="eyebrow">Featured work</p>
+            <h2>Projects built with purpose</h2>
+        </div>
 
-<div class="card">
-<img src="assets/images/Residential.png">
-<h3>Residential</h3>
-<p>Housing projects and residential developments.</p>
-</div>
+        <div class="project-grid">
+            <article class="project-card">
+                <img src="assets/images/Commercial.png" alt="Modern business center">
+                <div class="card-body">
+                    <h3>Commercial Building</h3>
+                    <p>Modern business center for efficient operations and long-term use.</p>
+                </div>
+            </article>
 
-<div class="card">
-<img src="assets/images/Infrastructure.png">
-<h3>Infrastructure</h3>
-<p>Roads, bridges and public facilities.</p>
-</div>
+            <article class="project-card">
+                <img src="assets/images/Residential.png" alt="Residential complex">
+                <div class="card-body">
+                    <h3>Residential Complex</h3>
+                    <p>Luxury housing development with practical layouts and dependable construction.</p>
+                </div>
+            </article>
 
-</div>
+            <article class="project-card">
+                <img src="assets/images/Infrastructure.png" alt="Road and public works project">
+                <div class="card-body">
+                    <h3>Infrastructure Project</h3>
+                    <p>Roads and public works designed to support safe and reliable access.</p>
+                </div>
+            </article>
+        </div>
+    </section>
 
-</section>
+    <section class="contact" id="contact">
+        <div class="contact-panel">
+            <p class="eyebrow">Contact us</p>
+            <h2>Tell us about your project</h2>
+            <p>Send your details and the RILCO BUILDERS team will review your request.</p>
 
-<section class="projects" id="projects">
-
-<h2>Featured Projects</h2>
-
-<div class="project-grid">
-
-<div class="project-card">
-<img src="assets/images/Commercial.png">
-<h3>Commercial Building</h3>
-<p>Modern Business Center</p>
-</div>
-
-<div class="project-card">
-<img src="assets/images/Residential.png">
-<h3>Residential Complex</h3>
-<p>Luxury Housing Development</p>
-</div>
-
-<div class="project-card">
-<img src="assets/images/Infrastructure.png">
-<h3>Infrastructure Project</h3>
-<p>Roads and Public Works</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="contact" id="contact">
-
-<h2>Contact Us</h2>
-
-<form>
-
-<input type="text" placeholder="Full Name" required>
-
-<input type="email" placeholder="Email" required>
-
-<textarea placeholder="Message"></textarea>
-
-<button type="submit">
-Send Message
-</button>
-
-</form>
-
-</section>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+</main>
 
 <footer>
-<p>© 2026 RILCO BUILDERS. All Rights Reserved.</p>
+    <p>&copy; 2026 RILCO BUILDERS. All Rights Reserved.</p>
 </footer>
 
 </body>
