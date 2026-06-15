@@ -15,12 +15,13 @@ display:flex;
 justify-content:center;
 align-items:center;
 background:#f5f7fa;
+padding:20px;
 }
 
 .register-card{
 background:white;
 padding:40px;
-width:450px;
+width:min(450px,100%);
 border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,.1);
 }
@@ -39,6 +40,17 @@ margin-bottom:15px;
 .register-card button{
 width:100%;
 }
+
+.register-card p{
+margin-top:15px;
+text-align:center;
+}
+
+.register-card a{
+color:#0A4DA2;
+text-decoration:none;
+font-weight:600;
+}
 </style>
 
 </head>
@@ -46,7 +58,7 @@ width:100%;
 
 <div class="register-container">
 
-<div class="register-card">
+<form class="register-card" onsubmit="event.preventDefault(); register();">
 
 <h2>Create Account</h2>
 
@@ -54,25 +66,33 @@ width:100%;
 type="text"
 id="fullname"
 placeholder="Full Name"
+required
 >
 
 <input
 type="email"
 id="email"
 placeholder="Email"
+required
 >
 
 <input
 type="password"
 id="password"
 placeholder="Password"
+required
 >
 
-<button onclick="register()">
+<button type="submit">
 Register
 </button>
 
-</div>
+<p>
+Already have an account?
+<a href="login.html">Login</a>
+</p>
+
+</form>
 
 </div>
 
